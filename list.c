@@ -4,8 +4,7 @@ struct node{
     int data;
     struct node *next;
 };
-struct node *head,*newnode,*nextnode,*temp;
-int len=0;
+struct node *head,*newnode,*nextnode,*preptr,*temp;
 void create(){
     head=NULL;
     int ch=1,data;
@@ -33,12 +32,21 @@ void display(){
     while(temp!=NULL){
         printf("%d  ",temp->data);
         temp=temp->next;
-        len++;
+        
     }
+}
+int len(){
+    int l=0;
+    temp=head;
+    while(temp!=NULL){
+    l++;
+    temp=temp->next;
+    }
+    return l;
 }
 void deletion(){
     int pos,i=1;
-    int y=len;
+    int y=len();
     temp=head;
     printf("\nenter position to delete");
     scanf("%d",&pos);
@@ -62,32 +70,34 @@ void deletion(){
     }
 }
 void insertion(){
-    int i=1,pos,x=len;
+    int i=1,pos;
+   int  x=len();
     temp=head;
-    printf("enter the position to insert ");
+    printf("\nenter position to insert");
     scanf("%d",&pos);
     if(pos>x)
     printf("invalid position");
     else{
         while(i<pos){
+            preptr=temp;
             temp=temp->next;
             i++;
         }
     }
     newnode=(struct node *)malloc(sizeof(struct node));
-    printf("\nenter data to insert ");
+    printf("enter data to insert ");
     scanf("%d",&newnode->data);
-    newnode->next=temp->next;
-    temp->next=newnode;
+    newnode->next=temp;
+    preptr->next=newnode;
 }
 void main(){
     create();
     display();
     deletion();
-    printf("after deletion\n");
+    printf("after deletion");
     display();
     insertion();
-    printf("after insertion\n");
+    printf("after inserion");
     display();
 }
     

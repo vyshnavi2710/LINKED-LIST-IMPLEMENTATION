@@ -9,4 +9,4 @@ MENTOR: NEELA SANTOSH
 I HAVE IMPLEMENTED SINGLE LINKED LIST WITH OPERATIONS INSERTION,DELETION,TRAVERSAL USING C PROGRAM
 
 OUTPUT:
-![Image](https://github.com/user-attachments/assets/b9630154-fc82-4375-88f2-57f8b88cfc91)
+![Image](https://github.com/user-attachments/assets/7c7238d3-d3bd-4eba-874a-475f4f02ad9b)
